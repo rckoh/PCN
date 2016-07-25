@@ -1,10 +1,13 @@
 var apiTimeOut = 20000;
 var count = 0;
 var datacount = 0;
+//var weburl="http://192.168.0.250";
+var weburl="http://192.168.1.19";
+
 
 function getActivityList(){
     $.ajax({
-      url: "http://192.168.0.250/pcn/api/product/1",
+      url: weburl+"/pcn/api/product/1",
       //url: "http://192.168.1.19/pcn/api/product/1",
       type: "GET",  
       headers: {
@@ -142,7 +145,7 @@ function alertDismissed(){
 function getafterdate(dates){
 
     $.ajax({
-      url: "http://192.168.0.250/pcn/api/product",
+      url: weburl+"/pcn/api/product",
       //url: "http://192.168.1.19/pcn/api/product",    
       type: "POST",
       data:"dateStr="+dates,
