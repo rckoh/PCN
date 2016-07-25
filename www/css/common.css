@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'base'; /*a name to be used later*/
+    src: url('../font/Base4.TTF'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'grey'; /*a name to be used later*/
+    src: url('../font/grey.TTF'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'century'; /*a name to be used later*/
+    src: url('../font/century.TTF'); /*URL to font*/
+}
+
+
+
+/*loading style*/
+.loadingPage{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 99;
+}
+
+.loadingFrame{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 14vw;
+    height: 14vw;
+    background-color: black;
+    border-radius: 10px;
+    margin: auto;
+    z-index: 99;
+}
+
+.loadingIcon{
+    height: 80%;
+    width: 80%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+
+.gifdiv{
+    position: absolute;
+    top: 50%;
+    height: auto;
+    width: 50%;
+    left: 28%;
+    z-index: 99;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    
+}
+
+.gifclass{
+    height: 100%;
+    width: 100%;
+}

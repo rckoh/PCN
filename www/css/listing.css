@@ -1,0 +1,450 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+@font-face {
+    font-family: 'gothic'; /*a name to be used later*/
+    src: url('../font/gothic.TTF'); /*URL to font*/
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width:100%;
+    overflow: hidden;
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;
+    -webkit-overflow-scrolling: touch;
+    /* prevent copy paste, to allow, change 'none' to 'text' */
+/*    background-color:#53DCDF;*/
+    background-color: white;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+/*    font-size:12px;*/
+/*    text-transform:uppercase;*/}
+
+
+.app{
+    /*    background:url(../img/pssb_logo.png) no-repeat center top;  170px x 200px */
+    
+/*    left:50%;*/
+/*    top:50%;*/
+    height:100%;                    
+    width:100%;                    
+/*    text-align:center;*/
+    padding:0px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:0px 0px 0px 0px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+.header{
+    top: 0%;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 10%;
+}
+
+.btnhome{
+    
+    width: 20%;
+    height: 100%;
+    left: 10%;
+    top: 5%;
+    position: absolute;
+    background-color: darkblue;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+}
+
+.imghome{
+    height: 100%;
+    width: 100%;
+}
+
+.btnsearchicon{
+    
+     width: 20%;
+    height: 100%;
+    right: 10%;
+    top: 5%;
+    position: absolute;
+    background-color: darkblue;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+}
+
+.imgsearch{
+    height: 50%;
+    width: 50%;
+}
+.content{
+    
+    top: 12%;
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background-color: whitesmoke;
+}
+.pageone{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0%;
+    display: inline-block;
+    position: absolute;
+    z-index: 3;
+/*    position: absolute;*/
+    
+    -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        -webkit-transition: transform 400ms ease;
+        -moz-transition: transform 400ms ease;
+        transition: transform 400ms ease;
+}
+
+
+.wrapper{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    display: block;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    bottom: 0%;
+    overflow:auto;
+}
+
+.scrollul{
+    list-style:none;
+    padding:0;
+    margin:0;
+    width:100%;
+    text-align:left;
+
+}
+ 
+.scrollli {
+     
+        height:auto;
+        border-bottom:1px solid #ccc;
+        border-top:1px solid #fff;
+    /*    background-color:#fafafa;*/
+    /*    font-size:2.4vw;*/
+        border-bottom: 1px dotted #333;  
+        outline: none;
+        
+    }
+
+.scrollli:hover {
+    background-color: white;
+}
+
+.scroll-content {
+    position:absolute; 
+    z-index:1;
+    width:100%;
+    padding:0;
+    background-color: transparent;
+    outline: none;
+}
+
+.merchantDiv{
+    position: relative;
+    background-color: white;
+    outline: none;
+}
+
+li{
+
+    left: 0px;
+    list-style: none;
+    width: 100%;
+    
+}
+
+.contentdiv{
+    position: relative;
+    width: 100%;
+    background-color: aqua;
+    
+}
+.bigtable{
+    
+    width: 100%;
+    position: relative;
+    background-color: lightgray;
+    height: 100%;
+    margin-bottom: 15px;
+}
+.
+
+.bigtable span{
+    font-size: 5vw;
+}
+.bigtable,tr,td{
+    border: 1px solid black;
+}
+
+.tableintable{
+    width: 100%;
+    
+}
+.lefttd{
+    text-align: left;
+    width: 33%;
+    height: 10%;
+     word-break: break-all;
+    
+}
+.midtd{
+    text-align: center;
+    width: 33%;
+    height: 10%;
+     word-break: break-all;
+}
+.righttd{
+    text-align: right;
+    width: 33%;
+    height: 30px;
+     word-break: break-all;
+}
+
+.wholetd{
+    height: 30px;
+    word-break: break-all;
+}
+.PwdBg{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 95;
+}
+
+.PwdContent{
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    left: 2.5%;
+    top: 0%;
+    background-color: white;
+    z-index: 96;
+}
+
+.PwdHeader{
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    background-color: darkblue;
+}
+
+.PwdDetails{
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    top: 10%;
+
+}
+
+.PwdTitle{
+    position: absolute;
+    height: 100%;
+    width: 90%;
+    color: white; 
+    font-size: 5vw;
+    background-color: transparent;
+    font-family: "century";
+    border: none;
+    outline: none;
+}
+
+.PwdCloseBtn{
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    right: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.PwdCloseBtn img{
+    height: 60%;
+    width: auto;
+    background-color: transparent;
+}
+
+.textspan1{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 5vw;
+    display: none;
+    
+}
+.inputgroup{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    height: 7%;
+    font-size: 4vw;
+    border-color: grey;
+    border-radius: 0.5em;
+    text-align: center;
+    font-family: "grey";
+}
+
+.textspan2{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    font-size: 5vw;
+    display: none;
+}
+
+.inputcode{
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 80%;
+    height: 7%;
+    font-size: 4vw;
+    border-color: grey;
+    text-align:center;
+    font-family: "grey";
+    border-radius: 0.5em;
+    outline: none;
+    
+}
+
+.btnSearch{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 10%;
+    background-color: darkblue;
+    border: none;
+    outline: none;
+    font-size: 5vw;
+    color: white;
+    font-family: "century";
+}
+.dropdown{
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    top: 3%;
+    font-size: 5vw;
+    background-color: darkblue;
+    -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 0.5em;
+    color: white;
+    outline: none;
+    border: none;
+}
+.or1{
+    position: absolute;
+    top: 10%;
+    left: 47%;
+    width: auto;
+    height: auto;
+    font-size: 3vw;
+     font-family: "base";
+    text-align: center;
+    outline: none;
+    border: none;
+}
+
+.inputdesc{
+    
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 80%;
+    height: 7%;
+    font-size: 4vw;
+    border-color: grey;
+    border-radius: 0.5em;
+    font-family: "base";
+    text-align: center;
+    outline: none;
+}
+.inputdesc2{
+    
+    position: absolute;
+    top: 45%;
+    left: 10%;
+    width: 80%;
+    height: 7%;
+    font-size: 4vw;
+    border-color: grey;
+    border-radius: 0.5em;
+    font-family: "base";
+    text-align: center;
+    outline: none;
+}
+.or2{
+    position: absolute;
+    top: 25%;
+    left: 47%;
+    width: auto;
+    height: auto;
+    font-size: 3vw;
+     font-family: "base";
+    text-align: center;
+    outline: none;
+    border: none;
+}
+.or3{
+    position: absolute;
+    top: 40%;
+    left: 47%;
+    width: auto;
+    height: auto;
+    font-size: 3vw;
+     font-family: "base";
+    text-align: center;
+    outline: none;
+    border: none;
+}
+.totalsearch{
+    position: absolute;
+    left: 3%;
+    bottom: 3%;
+}
+.totalsearchresult{
+    position: absolute;
+    right:7%;
+    bottom: 3%;
+}
+
+.bolder{
+    font-weight: bolder;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, width=device-width, target-densitydpi=medium-dpi" />
+<!--        <link rel="stylesheet" href="js/jquery-mobile/jquery.mobile-1.4.5.css"/>-->
+        <title>Home Page</title>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-mobile/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/jquery-mobile/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="js/home.js"></script>
+        <script type="text/javascript" src="js/webRequest.js"></script>
+        <script type="text/javascript" src="js/common.js"></script>
+   
+        <link rel="stylesheet" type="text/css" href="css/home.css" />
+        <link rel="stylesheet" type="text/css" href="css/common.css" />
+       <script type="text/javascript">
+            document.addEventListener("deviceready", onDeviceReady, false);         
+            function onDeviceReady() {
+            dbmanager.initdb();
+            dbmanager.CountTotal(function(returnData){
+                var total = returnData.rows.item(0).cnt;
+                    $('.totalrecordresult').text(total);
+            });
+               dbmanager.initdb();
+                dbmanager.getSyncDate(function(returnData){
+
+                var dates = returnData.rows.item(0).sd;
+                dates = dates.replace("T", " ");
+                dates = dates.substring(0, dates.length - 6);
+                $('.lastsyncresult').text(dates);
+                }); 
+                
+               
+                
+                document.addEventListener("backbutton", onBackKeyDown, false);
+                
+            }
+            function onBackKeyDown(e) {
+                
+              e.preventDefault();
+                window.location="index.html";
+              //navigator.notification.confirm("Are you sure you want to exit? / 你确定要退出吗？", onConfirm, "Confirmation", "Yes,No");     
+            }
+            
+//            function onConfirm(button) {
+//                if(button==2){//If User selected No, then we just do nothing
+//                    return;
+//                }else {
+//                    
+//                }
+//            }
+        </script>
+    
+
+    </head>
+    <body>
+        <div class="app">
+            <div class="content">
+                
+                <img class="logo" src="img/pcn.png"/>
+                <br>
+                <button class="btnsync" onclick="syncOnClick();"><img class="imgsync" src='img/sync.png'/></button><br>
+                <button class="btnsearch" onclick="searchOnClick();"><img class="imgsearch" src="img/search.png"/></button>
+               
+
+                <progress id="progressbar1" class="progressbar" value="0" max="100"></progress>
+                <progress id="progressbar2" class="progressbar" value="0" max="100"></progress>
+               <span class="totalrecord">Total Record / 结果总数 :</span>
+                <span class="totalrecordresult">0</span>
+                <span class="lastsync">Last Sync Date / </span>
+                <span class="chineselastsync">最后同步日期 :</span>
+                <span class="lastsyncresult"></span>
+            </div> 
+            
+        </div>
+            
+    </body>
+    <script type="text/javascript">
+       
+//        $(document).ready(function(){        
+//  dbmanager.initdb();
+//                dbmanager.getSyncDate(function(returnData){
+//
+//                var dates = returnData.rows.item(0).sd;
+//                dates = dates.replace("T", " ");
+//                dates = dates.substring(0, dates.length - 6);
+//                $('.lastsyncresult').text(dates);
+//                    
+//                }); 
+//        });
+   
+    </script>
+   
+</html>

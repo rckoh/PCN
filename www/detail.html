@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, minimum-scale=1, width=device-width, target-densitydpi=medium-dpi" />
+<!--        <link rel="stylesheet" href="js/jquery-mobile/jquery.mobile-1.4.5.css"/>-->
+        <title>Home Page</title>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-mobile/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="js/jquery-mobile/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="js/detail.js"></script>
+        <script type="text/javascript" src="js/webRequest.js"></script>
+        <script type="text/javascript" src="js/common.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/detail.css" />
+        <link rel="stylesheet" type="text/css" href="css/common.css" />
+           <script type="text/javascript">
+            document.addEventListener("deviceready", onDeviceReady, false);         
+            function onDeviceReady() {
+                 var activityName = getUrlParameter("item_code");
+            getSelectedData(activityName); 
+                document.addEventListener("backbutton", onBackKeyDown, false);       
+            }
+            function onBackKeyDown(e) {
+              e.preventDefault();
+              window.location="home.html";
+            }
+            
+        </script>
+
+    </head>
+
+    <body>
+        <div class="app">
+            <div class="header"><button class="btnhome" onclick="homeOnClick();"><img class="imghome" src="img/ic_home-web.png"/></button>
+            <button class="btnsearchicon" onclick="searchOnClick();"><img class="imgsearch" src="img/search_small.png"/></button>
+            </div> 
+            <div class="contentcontent">
+              
+                
+                
+                <div class="itemdivcontent">
+                <span class="iteminformation">ITEM INFORMATION / 物品信息</span>
+                </div>
+                <div class="content-scroll">
+                <div class="pageone-scroll">
+                    <div class="wrapper-scroll" id="wrapper">
+                <div class="itemdiv">
+                
+                <div class="itemdivcontent2"><span class="spanitemgroup">ITEM GROUP / 物品组</span><span class="span11"></span></div>
+                <div class="itemdivcontent3"><span class="spanitemcode">ITEM CODE / 物品代码</span><span class="span22"></span></div>
+                
+                
+                <div class="itemdiv22"><span class="desc">DESCRIPTION / 描述</span><span class="span33"> 
+                    </span></div>
+                <div class="itemdiv23"><span class="desc2">DESCRIPTION 2 / 描述2</span><span class="span44"></span></div> 
+                <div class="itemdiv24"><span class="uom">UOM / 测量单位</span><span class="span55"></span></div>
+                <div class="itemdiv25"><span class="type">TYPE / 种类</span><span class="span66"></span></div>
+                <div class="itemdiv31"><span class="price1">PRICE 1 / 价钱 1</span><span class="span77"></span></div>
+                <div class="itemdiv32"><span class="price2">PRICE 2 / 价钱 2</span><span class="span88"></span></div>
+                <div class="itemdiv33"><span class="minprice">PRICE (MIN) / 最低价钱</span><span class="span99"></span></div>
+                 <div class="itemdiv34"><span class="balanceqty">Balance Quantity / 剩余数量</span><span class="span00"></span></div>
+                <div class="itemdiv35"><span class="lastprice">Last Price / 最后价钱</span><span class="spanlast"></span></div>
+                
+                </div>
+
+                    </div>
+                </div>
+            </div>
+
+            </div>  
+        </div>
+            
+    </body>
+    <script type="text/javascript">
+       
+        $(document).ready(function(){    
+            
+             
+        });
+   
+    </script>
+    
+</html>

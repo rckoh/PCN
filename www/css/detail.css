@@ -1,0 +1,872 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+@font-face {
+    font-family: 'gothic'; /*a name to be used later*/
+    src: url('../font/gothic.TTF'); /*URL to font*/
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width:100%;
+    overflow: hidden;
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;
+    -webkit-overflow-scrolling: touch;
+    /* prevent copy paste, to allow, change 'none' to 'text' */
+/*    background-color:#53DCDF;*/
+    background-color: white;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+/*    font-size:12px;*/
+/*    text-transform:uppercase;*/}
+
+
+.app{
+    /*    background:url(../img/pssb_logo.png) no-repeat center top;  170px x 200px */
+    
+/*    left:50%;*/
+/*    top:50%;*/
+    height:100%;                    
+    width:100%;                    
+/*    text-align:center;*/
+    padding:0px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:0px 0px 0px 0px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+.header{
+    top: 3%;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 20%;
+}
+
+.btnhome{
+    
+    width: 35%;
+    height: 90%;
+    left: 10%;
+    top: 5%;
+    position: absolute;
+    background-color: darkblue;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+}
+
+.imghome{
+    height: 100%;
+    width: 100%;
+}
+
+.btnsearchicon{
+    
+     width: 35%;
+    height: 90%;
+    right: 10%;
+    top: 5%;
+    position: absolute;
+    background-color: darkblue;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+}
+
+.imgsearch{
+    height: 50%;
+    width: 50%;
+}
+
+.PwdBg{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 95;
+}
+
+.PwdContent{
+    position: absolute;
+    width: 95%;
+    height: 90%;
+    left: 2.5%;
+    top: 5%;
+    background-color: white;
+    z-index: 96;
+}
+
+.PwdHeader{
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    background-color: darkblue;
+}
+
+.PwdDetails{
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    top: 10%;
+
+}
+
+.PwdTitle{
+    position: absolute;
+    height: 100%;
+    width: 90%;
+    color: white; 
+    font-size: 5vw;
+    background-color: transparent;
+    font-family: "century";
+    border: none;
+    outline: none;
+}
+
+.PwdCloseBtn{
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    right: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.PwdCloseBtn img{
+    height: 60%;
+    width: auto;
+    background-color: transparent;
+}
+
+.textspan1{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 5vw;
+    display: none;
+    
+}
+.inputgroup{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    height: 7%;
+    font-size: 4.5vw;
+    border-color: grey;
+    border-radius: 0.5em;
+    text-align: center;
+    font-family: "grey";
+}
+
+.textspan2{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    font-size: 5vw;
+    display: none;
+}
+
+.inputcode{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 80%;
+    height: 7%;
+    font-size: 4.5vw;
+    border-color: grey;
+    text-align:center;
+    font-family: "grey";
+    border-radius: 0.5em;
+    outline: none;
+    
+}
+
+.btnSearch{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 10%;
+    background-color: darkblue;
+    border: none;
+    outline: none;
+    font-size: 5vw;
+    color: white;
+    font-family: "century";
+}
+
+
+li{
+
+    left: 0px;
+    list-style: none;
+    width: 100%;
+    
+}
+
+.contentdiv{
+    width: 95%;
+    
+}
+
+
+.contentt1{
+    margin-top: 2vw;
+    background-color: darkblue;
+    width: 50%;
+    height: auto;
+    min-height: 10vw;
+    float: left;
+    
+}
+
+.contentt1 span{
+    font-size: 3vw;
+    color: white;
+
+}
+.buttondata{
+    width: 100%;
+    height: 10vw;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-align: left;
+    
+}
+
+.contentt2{
+    margin-top: 2vw;
+    background-color: darkblue;
+    width: 50%;
+    height: 10vw;
+    float: left;
+}
+
+.contentt2 span{
+    font-size: 3vw;
+    color: white;
+    float: right;
+}
+
+
+.contentt3{
+    width: 50%;
+    height: 10vw;
+    float: left;
+    background-color: whitesmoke;
+
+}
+
+
+.contentt3 span{
+    font-size: 3vw;
+    color: gray;
+   
+}
+
+.contentt4{
+    width: 50%;
+    height: 10vw;
+    float: right;
+    background-color: whitesmoke;
+}
+.contentt4 span{
+    font-size: 3vw;
+    color: gray;
+    float: right;
+}
+
+.contentt5{
+    width: 50%;
+    height: 10vw;
+
+    float: left;
+    background-color: lightgray;
+    margin-bottom: 5vw;
+}
+.contentt5 span{
+    font-size: 3vw;
+    color: black;
+   
+}
+
+.contentt6{
+    width: 50%;
+    height: 10vw;
+
+    float: right;
+    background-color: lightgray;
+    margin-bottom: 5vw;
+}
+.contentt6 span{
+    font-size: 3vw;
+    color: black;
+    float: right;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    position: relative;
+    left: 2%;
+}
+
+
+.content{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+	position:absolute;
+	top:0px;
+
+}
+
+.pageone{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0%;
+    display: inline-block;
+    position: absolute;
+    z-index: 3;
+/*    position: absolute;*/
+    
+    -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        -webkit-transition: transform 400ms ease;
+        -moz-transition: transform 400ms ease;
+        transition: transform 400ms ease;
+}
+
+
+.wrapper{
+    height: 100%;
+    width: 100%;
+    background-color: ghostwhite;
+    position: absolute;
+    display: block;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    bottom: 0%;
+    overflow:auto;
+}
+
+.scrollul{
+    list-style:none;
+    padding:0;
+    margin:0;
+    width:100%;
+    text-align:left;
+
+}
+ 
+.scrollli {
+        padding:0 10px;
+        width: 100%;
+        height:auto;
+        border-bottom:1px solid #ccc;
+        border-top:1px solid #fff;
+    /*    background-color:#fafafa;*/
+    /*    font-size:2.4vw;*/
+        border-bottom: 1px dotted #333;  
+        outline: none;
+        
+    }
+
+.scrollli:hover {
+    background-color: white;
+}
+
+.scroll-content {
+    position:absolute; 
+    z-index:1;
+    width:100%;
+    padding:0;
+    background-color: transparent;
+    outline: none;
+    left: 0px;
+}
+
+.Nodata{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 5vw;
+    
+}
+.contentcontent{
+    position: absolute;
+    top: 23%;
+    width: 100%;
+    height: 77%;
+    left: 0px;
+  
+}
+
+.itemdiv{
+    position: absolute;
+    width: 100%;
+    height: 150vw;
+    background-color: white;
+    top: 3%;
+    left: 0px;
+
+}
+
+
+.itemdivcontent{
+    position: absolute;
+    width: 90%;
+    height: 10vw;
+    background-color: darkblue;
+    top: 0px;
+    left: 5%;
+    z-index: 94;
+}
+
+.iteminformation{
+    position: absolute;
+    font-size: 3.5vw;
+    color: white;
+    top: 25%;
+    left: 3%;
+    
+}
+.itemdivcontent2{
+    position: absolute;
+    width: 100%;
+    height: 15vw;
+    background-color: whitesmoke;
+    top: 0px;
+    left: 0px;
+}
+
+.spanitemgroup{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    color: grey;
+    left: 3%;
+    top: 30%;
+    font-size: 4vw;
+}
+.span11{
+   position: absolute;
+    height: 100%;
+    color: grey;
+    right: 2px;
+    font-size: 4.5vw;
+    top: 10%;
+    float: right;
+    max-width: 50%;
+    overflow: scroll;
+    background-color: transparent;
+}
+
+.itemdivcontent3{
+    position: absolute;
+    width: 100%;
+    height: 15vw;
+    background-color: lightgray;
+    top: 15vw;
+    left: 0px;
+}
+
+.spanitemcode{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    color: black;
+    left: 3%;
+    top: 3vw;
+    font-size: 4vw;
+}
+.span22{
+    position: absolute;
+    height: 100%;
+    color: black;
+    right: 2px;
+    font-size: 4.5vw;
+    top: 20%;
+    float: right;
+    max-width: 50%;
+    overflow: scroll;
+    background-color: transparent;
+}
+
+.itemdiv22{
+    position: absolute;
+    width: 100%;
+    height: 15vw;
+    background-color: whitesmoke;
+    top: 30vw;
+    left: 0px;
+}
+
+.desc{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    color: grey;
+    left: 3%;
+    top: 30%;
+    font-size: 4vw;
+}
+
+.span33{
+    position: absolute;
+    height: 100%;
+    color: grey;
+    right: 2px;
+    font-size: 4.5vw;
+    top: 20%;
+    float: right;
+    max-width: 50%;
+    overflow: scroll;
+    background-color: transparent;
+}
+
+.itemdiv23{
+    position: absolute;
+    width: 100%;
+    height: 15vw;
+    background-color: lightgrey;
+    top: 45vw;
+    left: 0px;
+}
+
+.desc2{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    color: black;
+    left: 3%;
+    top: 30%;
+    font-size: 4vw;
+}
+
+.span44{
+    position: absolute;
+    height: 100%;
+    color: black;
+    right: 2px;
+    font-size: 4.5vw;
+    top: 20%;
+    float: right;
+    max-width: 50%;
+    overflow: scroll;
+    background-color: transparent;
+}
+
+.itemdiv24{
+    position: absolute;
+    width: 100%;
+    height: 15vw;
+    background-color: whitesmoke;
+    top: 60vw;
+    left: 0px;
+}
+
+.uom{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    color: grey;
+    left: 3%;
+    top: 30%;
+    font-size: 4vw;
+}
+.span55{
+   position: absolute;
+    height: 100%;
+    color: grey;
+    right: 2px;
+    font-size: 4.5vw;
+    top: 20%;
+    float: right;
+    max-width: 50%;
+    overflow: scroll;
+    background-color: transparent;
+}
+
+.itemdiv25{
+    position: absolute;
+    width: 100%;
+    height: 15vw;
+    background-color: lightgray;
+    top: 75vw;
+    left: 0px;
+}
+
+.type{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    color: black;
+    left: 3%;
+    top: 30%;
+    font-size: 4vw;
+}
+
+.span66{
+    position: absolute;
+    height: 100%;
+    color: black;
+    right: 2px;
+    font-size: 4.5vw;
+    top: 20%;
+    float: right;
+    max-width: 50%;
+    overflow: scroll;
+    background-color: transparent;
+}
+
+.itemdiv31{
+    position: absolute;
+    width: 100%;
+    height: 15vw;
+    background-color: whitesmoke;
+    top: 90vw;
+    left: 0px;
+}
+
+.price1{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    color: grey;
+    left: 3%;
+    top: 30%;
+    font-size: 4vw;
+}
+
+.span77{
+    position: absolute;
+    height: 100%;
+    color: grey;
+    right: 2px;
+    font-size: 4.5vw;
+    top: 20%;
+    float: right;
+    max-width: 50%;
+    overflow: scroll;
+    background-color: transparent;
+}
+
+.itemdiv32{
+    position: absolute;
+    width: 100%;
+    height: 15vw;
+    background-color: lightgrey;
+    top: 105vw;
+    left: 0px;
+}
+
+.price2{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    color: black;
+    left: 3%;
+    top: 30%;
+    font-size: 4vw;
+}
+
+.span88{
+    position: absolute;
+    height: 100%;
+    color: black;
+    right: 2px;
+    font-size: 4.5vw;
+    top: 20%;
+    float: right;
+    max-width: 50%;
+    overflow: scroll;
+    background-color: transparent;
+}
+
+.itemdiv33{
+    position: absolute;
+    width: 100%;
+    height: 15vw;
+    background-color: whitesmoke;
+    top: 120vw;
+    left: 0px;
+}
+
+.minprice{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    color: grey;
+    left: 3%;
+    top: 30%;
+    font-size: 4vw;
+}
+
+.span99{
+    position: absolute;
+    height: 100%;
+    color: grey;
+    right: 2px;
+    font-size: 4.5vw;
+    top: 20%;
+    float: right;
+    max-width: 50%;
+    overflow: scroll;
+    background-color: transparent;
+}
+
+.itemdiv34{
+    position: absolute;
+    width: 100%;
+    height: 15vw;
+    background-color: lightgrey;
+    top: 135vw;
+    left: 0px;
+}
+
+.balanceqty{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    color: black;
+    left: 3%;
+    top: 30%;
+    font-size: 4vw;
+}
+
+.span00{
+    position: absolute;
+    height: 100%;
+    color: black;
+    right: 2px;
+    font-size: 4.5vw;
+    top: 20%;
+    float: right;
+    max-width: 50%;
+    overflow: scroll;
+    background-color: transparent;
+}
+
+.itemdiv35{
+    position: absolute;
+    width: 100%;
+    height: 15vw;
+    background-color: whitesmoke;
+    top: 150vw;
+    left: 0px;
+}
+.lastprice{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    color: grey;
+    left: 3%;
+    top: 30%;
+    font-size: 4vw;
+}
+
+.spanlast{
+    position: absolute;
+    height: 100%;
+    color: grey;
+    right: 2px;
+    font-size: 4.5vw;
+    top: 20%;
+    float: right;
+    max-width: 50%;
+    background-color: transparent;
+}
+
+
+.dropdown{
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    top: 5%;
+    font-size: 7vw;
+    background-color: darkblue;
+    -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 0.5em;
+    color: white;
+    outline: none;
+    border: none;
+}
+
+
+
+.content-scroll{
+    width: 90%;
+    height: 90%;
+    background-color: red;
+	position:absolute;
+    top: 5%;
+    left: 5%;
+    margin-top: 0px;
+    padding-top: 0px;
+    z-index: 90;
+
+
+}
+
+.pageone-scroll{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0%;
+    display: inline-block;
+    position: absolute;
+    z-index: 3;
+    
+    -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        -webkit-transition: transform 400ms ease;
+        -moz-transition: transform 400ms ease;
+        transition: transform 400ms ease;
+}
+
+
+.wrapper-scroll{
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    position: absolute;
+    display: block;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    left: 0px;
+    overflow:auto;
+}
+
