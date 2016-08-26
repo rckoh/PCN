@@ -1,8 +1,8 @@
 var apiTimeOut = 20000;
 var count = 0;
 var datacount = 0;
-//var weburl="http://192.168.0.250";
-var weburl="http://192.168.1.19";
+var weburl="http://192.168.0.250";
+//var weburl="http://192.168.1.19";
 
 
 function getActivityList(){
