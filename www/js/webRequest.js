@@ -33,7 +33,8 @@ function getActivityList(){
       error:function (xhr, ajaxOptions, thrownError){
         debugger;
           //alert("error"+xhr.responseText);
-          //alert("Error: Unable to connect to server.");
+          loading.endLoading();
+          alert("Error: Unable to connect to server.");
         }
     }) 
     
